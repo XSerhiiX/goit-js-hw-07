@@ -1,6 +1,6 @@
 // Напиши скрипт для створення галереї зображень на основі масиву даних. HTML містить список ul.gallery.
 
-<ul class="gallery"></ul>
+{/* <ul class="gallery"></ul> */}
 
 // Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
 
@@ -38,3 +38,9 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const gallery = document.querySelector('.gallery');
+const markup = images
+  .map((img) => (`<li><img src='${img.url}' alt='${img.alt}'></li>`))
+  .join('');
+gallery.insertAdjacentHTML('beforeend', markup);
